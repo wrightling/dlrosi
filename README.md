@@ -7,11 +7,12 @@ Command Flow
 - |> checkout # all repos with parellelism
 
 ## TODO
-- [ ] lay out design as a simple command flow
+- [x] lay out design as a simple command flow
 - [ ] implement create_directories
 - [ ] implement repos (hard-code for now)
 - [ ] implement checkout
 - [ ] refactor repos to read from .rosirc
+- [ ] refactor directory locations to be in config
 
 ## Installation
 

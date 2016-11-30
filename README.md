@@ -9,8 +9,9 @@ Command Flow
 ## TODO
 - [x] lay out design as a simple command flow
 - [x] implement create_directories
-- [ ] implement repos (hard-code for now)
+- [x] implement repos (hard-code for now)
 - [ ] implement checkout
+- [ ] implement update # git stash + pull on all repos
 - [ ] refactor repos to read from .rosirc
 - [ ] refactor directory locations to be in config
 

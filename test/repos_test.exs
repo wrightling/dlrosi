@@ -3,7 +3,8 @@ defmodule ReposTest do
   doctest Dlrosi
 
   test "Repos#list returns ROSI client repos" do
-    assert Enum.any?(Dlrosi.Repos.all, &(&1 == {"clients", "rosi_catalog_client"}))
+    assert Enum.any?(Dlrosi.Repos.all,
+                     &(&1 == {"clients", "rosi_catalog_client"}))
   end
 
   test "Repos#list returns ROSI frontend repos" do

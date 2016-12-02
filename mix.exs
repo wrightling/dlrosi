@@ -27,6 +27,9 @@ defmodule Dlrosi.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:mock, "~> 0.2.0", only: :test}]
+    [
+      {:git_cli, "~> 0.2.2"},
+      {:mock, "~> 0.2.0", only: :test}
+    ]
   end
 end

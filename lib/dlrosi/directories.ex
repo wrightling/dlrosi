@@ -8,6 +8,8 @@ defmodule Dlrosi.Directories do
     |> process_results
   end
 
+  def base_dir, do: @base_dir
+
   defp create_subdirectory(subdirectory) do
     File.mkdir_p("#{@base_dir}/#{subdirectory}")
   end

@@ -2,7 +2,7 @@ defmodule Dlrosi.Clone do
   def clone_repos(repos) do
     repos
     |> Enum.map(&(Task.async(Dlrosi.Clone, :clone_repo, [&1])))
-    |> Enum.each(&(Task.await(&1, seconds(60))))
+    |> Enum.each(&(Task.await(&1, seconds_to_ms(60))))
   end
 
   def clone_repo(repo) do
@@ -10,7 +10,7 @@ defmodule Dlrosi.Clone do
   end
 
   defp base_dir, do: Dlrosi.Directories.base_dir
-  defp seconds(s), do: s*1000
+  defp seconds_to_ms(s), do: s*1000
 
   defp path_to(repo), do: "#{base_dir}/#{subdirectory(repo)}"
 

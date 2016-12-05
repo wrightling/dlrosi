@@ -7,6 +7,7 @@ defmodule Dlrosi.Clone do
 
   def clone_repo(repo) do
     File.cd!(path_to(repo), fn -> clone(repo) end)
+    {:ok, "whatever"}
   end
 
   defp base_dir, do: Dlrosi.Directories.base_dir

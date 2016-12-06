@@ -13,7 +13,7 @@ Command Flow
 - [x] implement clone
 - [x] make the clone commands run in parallel
 - [x] display output from clone commands and maintain order
-- [ ] create CLI interface to handle first-time cloning
+- [x] create CLI interface to handle first-time cloning
 - [ ] create CLI interface to handle executing commands across all repos (dlrosi exec)
 - [ ] refactor repos to read from .rosirc
 - [ ] refactor directory locations to be in config

@@ -14,9 +14,10 @@ Command Flow
 - [x] make the clone commands run in parallel
 - [x] display output from clone commands and maintain order
 - [x] create CLI interface to handle first-time cloning
-- [ ] create CLI interface to handle executing commands across all repos (dlrosi exec)
 - [ ] refactor repos to read from .rosirc
+- [ ] create CLI interface to handle executing commands across all repos (dlrosi exec)
 - [ ] refactor directory locations to be in config
+- [ ] create CLI interface to handle tagging across repos for production release
 
 ## Installation
 

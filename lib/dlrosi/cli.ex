@@ -1,5 +1,7 @@
 defmodule Dlrosi.CLI do
   def main(argv) do
+    enable_ascii_colors
+
     argv
     |> parse_args
     |> process
@@ -24,5 +26,10 @@ defmodule Dlrosi.CLI do
     Commands:
       dlrosi clone          # create project directories and clone all git repos
     """
+  end
+
+  # ASII colors are disabled with escript builds, normally
+  defp enable_ascii_colors do
+    Application.put_env(:elixir, :ansi_enabled, true)
   end
 end

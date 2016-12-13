@@ -16,7 +16,7 @@ Command Flow
 - [x] create CLI interface to handle first-time cloning
 - [ ] refactor repos to read from .rosirc
 - [ ] create CLI interface to handle executing commands across all repos (dlrosi exec)
-- [ ] refactor directory locations to be in config
+- [x] refactor directory locations to be in config
 - [ ] create CLI interface to handle tagging across repos for production release
 
 ## Installation

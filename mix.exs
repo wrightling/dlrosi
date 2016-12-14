@@ -15,7 +15,7 @@ defmodule Dlrosi.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: apps]
   end
 
   # Dependencies can be Hex packages:
@@ -31,6 +31,12 @@ defmodule Dlrosi.Mixfile do
     [
       {:git_cli, "~> 0.2.2"},
       {:mock, "~> 0.2.0", only: :test}
+    ]
+  end
+
+  defp apps do
+    [
+      :logger
     ]
   end
 end

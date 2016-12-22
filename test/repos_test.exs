@@ -6,58 +6,56 @@ defmodule ReposTest do
 
   test "Repos#list returns ROSI client repos" do
     with_mock Dlrosi.Rosirc, [rosirc: fn -> mock_rosirc end] do
-      Enum.each(Dlrosi.Repos.all, &(IO.puts(inspect(&1))))
-      assert Enum.any?(Dlrosi.Repos.all,
-                       &(&1 == {"clients", catalog_client_repo}))
-      refute Enum.any?(Dlrosi.Repos.all,
-                       &(&1 == {"clients", %Dlrosi.Repo{name: "rosi_common"}}))
+      assert Enum.any?(Dlrosi.Repos.all, &(&1 == {"clients", catalog_client_repo}))
+      refute Enum.any?(Dlrosi.Repos.all, &(&1 == {"clients", common_repo}))
     end
   end
 
   test "Repos#list returns ROSI frontend repos" do
     with_mock Dlrosi.Rosirc, [rosirc: fn -> mock_rosirc end] do
-      assert Enum.any?(Dlrosi.Repos.all,
-                       &(&1 == {"frontend", %Dlrosi.Repo{name: "ever_lounge"}}))
+      assert Enum.any?(Dlrosi.Repos.all, &(&1 == {"frontend", ever_lounge_repo}))
+      refute Enum.any?(Dlrosi.Repos.all, &(&1 == {"frontend", catalog_client_repo}))
     end
   end
 
   test "Repos#list returns ROSI service repos" do
     with_mock Dlrosi.Rosirc, [rosirc: fn -> mock_rosirc end] do
-      assert Enum.any?(Dlrosi.Repos.all,
-                       &(&1 == {"services", %Dlrosi.Repo{name: "rosi_catalog_service"}}))
+      assert Enum.any?(Dlrosi.Repos.all, &(&1 == {"services", catalog_service_repo}))
+      refute Enum.any?(Dlrosi.Repos.all, &(&1 == {"frontend", catalog_client_repo}))
     end
   end
 
   test "Repos#list returns ROSI shared repos" do
     with_mock Dlrosi.Rosirc, [rosirc: fn -> mock_rosirc end] do
-      assert Enum.any?(Dlrosi.Repos.all,
-                       &(&1 == {"shared", %Dlrosi.Repo{name: "rosi_common"}}))
+      assert Enum.any?(Dlrosi.Repos.all, &(&1 == {"shared", common_repo}))
+      refute Enum.any?(Dlrosi.Repos.all, &(&1 == {"frontend", catalog_client_repo}))
     end
   end
 
   defp mock_rosirc do
     %{
-      "ever_frontends" => %{"ever_lounge" => %{}},
-      "frontends" => %{"keep_lounge" => %{}},
-      "gems" => %{"rosi_common" => %{}},
-      "gems" => %{"rosi_catalog_client" => %{":path" => "/bogus/clients/rosi_catalog_client"}},
-      "services" => %{"rosi_oms_service" => %{}},
-      "services" => %{"rosi_catalog_service" => %{}},
-      "integration_suites" => %{"rosi_workflows" => %{}}
+      "apps" => [
+        %{"classification" => "client", "name" => "rosi_catalog_client"},
+        %{"classification" => "shared", "name" => "rosi_common"},
+        %{"classification" => "frontend", "name" => "ever_lounge"},
+        %{"classification" => "service", "name" => "rosi_catalog_service"}
+      ]
     }
   end
 
   defp catalog_client_repo do
-    %Dlrosi.Repo{
-      name: "rosi_catalog_client",
-      path: "/bogus/web/clients/rosi_catalog_client"
-    }
+    %Dlrosi.Repo{name: "rosi_catalog_client", classification: "client"}
   end
 
   defp common_repo do
-    %Dlrosi.Repo{
-      name: "rosi_common",
-      path: "/bogus/web/shared/rosi_common"
-    }
+    %Dlrosi.Repo{name: "rosi_common", classification: "shared"}
+  end
+
+  defp ever_lounge_repo do
+    %Dlrosi.Repo{name: "ever_lounge", classification: "frontend"}
+  end
+
+  defp catalog_service_repo do
+    %Dlrosi.Repo{name: "rosi_catalog_service", classification: "service"}
   end
 end

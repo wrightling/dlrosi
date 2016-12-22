@@ -144,6 +144,9 @@ apps:
     classification: integration
     shortcuts:
       - rosi
+  - name: ever_workflows
+    remote_repo: git@bitbucket.org:stelladot/ever_workflows.git
+    classification: integration
   - name: rosi
     remote_repo: git@bitbucket.org:stelladot/rosi.git
     classification: shared

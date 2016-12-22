@@ -31,4 +31,4 @@ use Mix.Config
 
 config :dlrosi, base_dir: "#{System.user_home}/Dev/stella/web"
 config :dlrosi, subdirectories: ["clients", "frontend", "services", "shared"]
-config :dlrosi, rosirc_path: "#{System.user_home}/.rosirc"
+config :dlrosi, rosirc_path: "#{System.user_home}/.dlrosirc"

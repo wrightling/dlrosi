@@ -1,29 +1,21 @@
 defmodule Dlrosi.Repos do
+  import Dlrosi.Rosirc, only: [rosirc: 0]
+
   def all do
-    Enum.concat([clients, frontends, services, shared])
+    rc = rosirc |> flatten_rcs
+    Enum.concat([clients(rc), frontends(rc), services, shared])
   end
 
-  defp clients do
-    ["rosi_cart",
-     "rosi_catalog_client",
-     "rosi_configuration_client",
-     "rosi_delia_client",
-     "rosi_inventory",
-     "rosi_my_business_client",
-     "rosi_oms_client",
-     "rosi_promotion_client",
-     "rosi_subscription_client",
-     "rosi_user"]
-    |> Enum.map(&({"clients", &1}))
+  defp clients(rc) do
+    rc
+    |> filter(~r{clients})
+    |> Enum.map(&({"clients", repo(&1)}))
   end
 
-  defp frontends do
-    ["customer_commerce",
-     "ever_lounge",
-     "keep_admin",
-     "keep_lounge",
-     "keep_www"]
-    |> Enum.map(&({"frontend", &1}))
+  defp frontends(rc) do
+    rc
+    |> rc_frontends
+    |> Enum.map(&({"frontend", repo(&1)}))
   end
 
   defp services do
@@ -59,5 +51,28 @@ defmodule Dlrosi.Repos do
      "rosi_remote_database_cleaner_server",
      "rosi_workflows"]
     |> Enum.map(&({"shared", &1}))
+  end
+
+  defp flatten_rcs(rc) do
+    rc
+    |> Map.values
+    |> Enum.reduce(&(Map.reduce(&1, &2)))
+  end
+
+  defp filter(rc, regex) do
+    rc
+  end
+
+  defp repo({name, attributes}) do
+    %Dlrosi.Repo{
+      name: name,
+      remote_repo: attributes[":remote_repo"] || "",
+      path: attributes[":path"] || "",
+      shortcuts: attributes[":shortcuts"] || []
+    }
+  end
+
+  defp rc_frontends(rc) do
+    Map.merge(rc["ever_frontends"] || %{}, rc["frontends"] || %{})
   end
 end

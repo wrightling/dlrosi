@@ -30,13 +30,15 @@ defmodule Dlrosi.Mixfile do
   defp deps do
     [
       {:git_cli, "~> 0.2.2"},
+      {:yaml_elixir, "~> 1.3.0"},
       {:mock, "~> 0.2.0", only: :test}
     ]
   end
 
   defp apps do
     [
-      :logger
+      :logger,
+      :yaml_elixir
     ]
   end
 end

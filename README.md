@@ -17,6 +17,7 @@ Command Flow
 - [ ] refactor repos to read from .rosirc
 - [ ] refactor clone to read from .rosirc
 - [ ] create CLI interface to handle executing commands across all repos (dlrosi exec)
+- [ ] add CLI params for restricting commands to subsets of the repos
 - [x] refactor directory locations to be in config
 - [ ] create CLI interface to handle tagging across repos for production release
 
@@ -39,4 +40,3 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
       [applications: [:dlrosi]]
     end
     ```
-

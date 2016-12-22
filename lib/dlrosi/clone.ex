@@ -17,15 +17,13 @@ defmodule Dlrosi.Clone do
 
   defp path_to(repo), do: "#{base_dir}/#{subdirectory(repo)}"
 
-  defp git_url(repo_name) do
-    "git@bitbucket.org:stelladot/#{repo_name}.git"
-  end
+  defp git_url({_, repo}), do: repo.remote_repo
 
   defp subdirectory(repo), do: elem(repo, 0)
-  defp repo_name(repo), do: elem(repo, 1)
+  def repo_name({_, repo}), do: repo.name
 
   defp clone(repo) do
-    Git.clone!([git_url(repo_name(repo)), "#{path_to(repo)}/#{repo_name(repo)}"])
+    Git.clone!([git_url(repo), "#{path_to(repo)}/#{repo_name(repo)}"])
   end
 
   defp format(output) do

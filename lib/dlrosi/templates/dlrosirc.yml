@@ -112,7 +112,7 @@ apps:
     classification: frontend
     shortcuts:
       - www
-  - name: ever_www
+  - name: customer_commerce
     remote_repo: git@bitbucket.org:stelladot/customer_commerce.git
     classification: frontend
     shortcuts:
@@ -124,7 +124,7 @@ apps:
     classification: frontend
     shortcuts:
       - e_lounge
-  - name: ever_content
+  - name: ever-b2c-content
     remote_repo: git@bitbucket.org:stelladot/ever-b2c-content.git
     classification: frontend
     shortcuts:

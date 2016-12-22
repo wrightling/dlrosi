@@ -1,0 +1,191 @@
+---
+config:
+  base-directory: /web
+apps:
+  - name: rosi_user_service
+    remote_repo: git@bitbucket.org:stelladot/rosi_user_service.git
+    classification: service
+    shortcuts:
+      - authentication
+      - user
+      - auth
+  - name: rosi_catalog_service
+    remote_repo: git@bitbucket.org:stelladot/rosi_catalog_service.git
+    classification: service
+    shortcuts:
+      - catalog
+      - cat
+  - name: rosi_delia_service
+    remote_repo: git@bitbucket.org:stelladot/rosi_delia_service.git
+    classification: service
+    shortcuts:
+      - delia
+  - name: rosi_virtual_fulfillment_service
+    remote_repo: git@bitbucket.org:stelladot/rosi_virtual_fulfillment_service.git
+    classification: service
+    shortcuts:
+      - virtual
+  - name: rosi_my_business_service
+    remote_repo: git@bitbucket.org:stelladot/rosi_my_business_service.git
+    classification: service
+    shortcuts:
+      - my-business
+      - biz
+      - business
+  - name: rosi_cart_service
+    remote_repo: git@bitbucket.org:stelladot/rosi_cart_service.git
+    classification: service
+    shortcuts:
+      - cart
+  - name: rosi_inventory_service
+    remote_repo: git@bitbucket.org:stelladot/rosi_inventory_service.git
+    classification: service
+    shortcuts:
+      - inventory
+  - name: rosi_promotion_service
+    remote_repo: git@bitbucket.org:stelladot/rosi_promotion_service.git
+    classification: service
+    shortcuts:
+      - promotion
+  - name: rosi_oms_service
+    remote_repo: git@bitbucket.org:stelladot/rosi_oms_service.git
+    classification: service
+    shortcuts:
+      - oms
+  - name: rosi_email_service
+    remote_repo: git@bitbucket.org:stelladot/rosi_email_service.git
+    classification: service
+    shortcuts:
+      - email
+  - name: rosi_rewards_service
+    remote_repo: git@bitbucket.org:stelladot/rosi_rewards_service.git
+    classification: service
+    shortcuts:
+      - rewards
+  - name: rosi_mockup_service
+    remote_repo: git@bitbucket.org:stelladot/rosi_mockup_service.git
+    classification: service
+    shortcuts:
+      - mockup
+  - name: rosi_payment_management_service
+    remote_repo: git@bitbucket.org:stelladot/rosi_payment_management_service.git
+    classification: service
+    shortcuts:
+      - payment
+  - name: rosi_subscription_service
+    remote_repo: git@bitbucket.org:stelladot/rosi_subscription_service.git
+    classification: service
+    shortcuts:
+      - subscription
+  - name: rosi_tax_service
+    remote_repo: git@bitbucket.org:stelladot/rosi_tax_service.git
+    classification: service
+    shortcuts:
+      - tax
+  - name: rosi_scheduler_service
+    remote_repo: git@bitbucket.org:stelladot/rosi_scheduler_service.git
+    classification: service
+    shortcuts:
+      - scheduler
+  - name: rosi_ugc_service
+    remote_repo: git@bitbucket.org:stelladot/rosi_ugc_service.git
+    classification: service
+    shortcuts:
+      - ugc
+  - name: rosi_credits_service
+    remote_repo: git@bitbucket.org:stelladot/rosi_credits_service.git
+    classification: service
+    shortcuts:
+      - credits
+  - name: keep_admin
+    remote_repo: git@bitbucket.org:stelladot/keep_admin.git
+    classification: frontend
+    shortcuts:
+      - admin
+  - name: keep_lounge
+    remote_repo: git@bitbucket.org:stelladot/keep_lounge.git
+    classification: frontend
+    shortcuts:
+      - lounge
+  - name: keep_www
+    remote_repo: git@bitbucket.org:stelladot/keep_www.git
+    classification: frontend
+    shortcuts:
+      - www
+  - name: ever_www
+    remote_repo: git@bitbucket.org:stelladot/customer_commerce.git
+    classification: frontend
+    shortcuts:
+      - commerce
+      - cc
+      - e_www
+  - name: ever_lounge
+    remote_repo: git@bitbucket.org:stelladot/ever_lounge.git
+    classification: frontend
+    shortcuts:
+      - e_lounge
+  - name: ever_content
+    remote_repo: git@bitbucket.org:stelladot/ever-b2c-content.git
+    classification: frontend
+    shortcuts:
+      - ec
+  - name: stelladot_lounge
+    remote_repo: git@bitbucket.org:stelladot/keep_lounge.git
+    classification: frontend
+    shortcuts:
+      - sd_lounge
+  - name: keep_workflows
+    remote_repo: git@bitbucket.org:stelladot/keep_workflows.git
+    classification: integration
+    shortcuts:
+      - keep
+  - name: rosi_workflows
+    remote_repo: git@bitbucket.org:stelladot/rosi_workflows.git
+    classification: integration
+    shortcuts:
+      - rosi
+  - name: rosi
+    remote_repo: git@bitbucket.org:stelladot/rosi.git
+    classification: shared
+  - name: rosi_user
+    remote_repo: git@bitbucket.org:stelladot/rosi_user.git
+    classification: client
+  - name: rosi_common
+    remote_repo: git@bitbucket.org:stelladot/rosi_common.git
+    classification: shared
+  - name: rosi_cart
+    remote_repo: git@bitbucket.org:stelladot/rosi_cart.git
+    classification: client
+  - name: rosi_my_business_client
+    remote_repo: git@bitbucket.org:stelladot/rosi_my_business_client.git
+    classification: client
+  - name: rosi_oms_client
+    remote_repo: git@bitbucket.org:stelladot/rosi_oms_client.git
+    classification: client
+  - name: rosi_consumer
+    remote_repo: git@bitbucket.org:stelladot/rosi_consumer.git
+    classification: shared
+  - name: rosi_producer
+    remote_repo: git@bitbucket.org:stelladot/rosi_producer.git
+    classification: shared
+  - name: rosi_catalog_client
+    remote_repo: git@bitbucket.org:stelladot/rosi_catalog_client.git
+    classification: client
+  - name: rosi_promotion_client
+    remote_repo: git@bitbucket.org:stelladot/rosi_promotion_client.git
+    classification: client
+  - name: rosi_delia_client
+    remote_repo: git@bitbucket.org:stelladot/rosi_delia_client.git
+    classification: client
+  - name: rosi_reports
+    remote_repo: git@bitbucket.org:stelladot/rosi_reports.git
+    classification: shared
+  - name: rosi_instrumentation
+    remote_repo: git@bitbucket.org:stelladot/rosi_instrumentation.git
+    classification: shared
+  - name: rosi_inventory
+    remote_repo: git@bitbucket.org:stelladot/rosi_inventory.git
+    classification: client
+  - name: rosi_faraday_client
+    remote_repo: git@bitbucket.org:stelladot/rosi_faraday_client.git
+    classification: shared

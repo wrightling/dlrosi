@@ -1,6 +1,6 @@
 defmodule Dlrosi.Rosirc do
   def rosirc do
-    path |> YamlElixir.read_from_file
+    path() |> YamlElixir.read_from_file()
   end
 
   defp path do

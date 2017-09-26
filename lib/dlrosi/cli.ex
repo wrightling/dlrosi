@@ -1,10 +1,10 @@
 defmodule Dlrosi.CLI do
   def main(argv) do
-    enable_ascii_colors
+    enable_ascii_colors()
 
     argv
-    |> parse_args
-    |> process
+    |> parse_args()
+    |> process()
   end
 
   def parse_args(argv) do

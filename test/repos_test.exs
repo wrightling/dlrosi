@@ -5,30 +5,30 @@ defmodule ReposTest do
   import Mock
 
   test "Repos#list returns ROSI client repos" do
-    with_mock Dlrosi.Rosirc, [rosirc: fn -> mock_rosirc end] do
-      assert Enum.any?(Dlrosi.Repos.all, &(&1 == {"clients", catalog_client_repo}))
-      refute Enum.any?(Dlrosi.Repos.all, &(&1 == {"clients", common_repo}))
+    with_mock Dlrosi.Rosirc, [rosirc: fn -> mock_rosirc() end] do
+      assert Enum.any?(Dlrosi.Repos.all, &(&1 == {"clients", catalog_client_repo()}))
+      refute Enum.any?(Dlrosi.Repos.all, &(&1 == {"clients", common_repo()}))
     end
   end
 
   test "Repos#list returns ROSI frontend repos" do
-    with_mock Dlrosi.Rosirc, [rosirc: fn -> mock_rosirc end] do
-      assert Enum.any?(Dlrosi.Repos.all, &(&1 == {"frontend", ever_lounge_repo}))
-      refute Enum.any?(Dlrosi.Repos.all, &(&1 == {"frontend", catalog_client_repo}))
+    with_mock Dlrosi.Rosirc, [rosirc: fn -> mock_rosirc() end] do
+      assert Enum.any?(Dlrosi.Repos.all, &(&1 == {"frontend", ever_lounge_repo()}))
+      refute Enum.any?(Dlrosi.Repos.all, &(&1 == {"frontend", catalog_client_repo()}))
     end
   end
 
   test "Repos#list returns ROSI service repos" do
-    with_mock Dlrosi.Rosirc, [rosirc: fn -> mock_rosirc end] do
-      assert Enum.any?(Dlrosi.Repos.all, &(&1 == {"services", catalog_service_repo}))
-      refute Enum.any?(Dlrosi.Repos.all, &(&1 == {"frontend", catalog_client_repo}))
+    with_mock Dlrosi.Rosirc, [rosirc: fn -> mock_rosirc() end] do
+      assert Enum.any?(Dlrosi.Repos.all, &(&1 == {"services", catalog_service_repo()}))
+      refute Enum.any?(Dlrosi.Repos.all, &(&1 == {"frontend", catalog_client_repo()}))
     end
   end
 
   test "Repos#list returns ROSI shared repos" do
-    with_mock Dlrosi.Rosirc, [rosirc: fn -> mock_rosirc end] do
-      assert Enum.any?(Dlrosi.Repos.all, &(&1 == {"shared", common_repo}))
-      refute Enum.any?(Dlrosi.Repos.all, &(&1 == {"frontend", catalog_client_repo}))
+    with_mock Dlrosi.Rosirc, [rosirc: fn -> mock_rosirc() end] do
+      assert Enum.any?(Dlrosi.Repos.all, &(&1 == {"shared", common_repo()}))
+      refute Enum.any?(Dlrosi.Repos.all, &(&1 == {"frontend", catalog_client_repo()}))
     end
   end
 

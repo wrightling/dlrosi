@@ -10,7 +10,7 @@ defmodule CloneTest do
                  {Git, [], [clone!: fn(_path) -> :ok end]},
                  {Dlrosi.Directories, [], [base_dir: fn -> "." end]}
                ]) do
-      assert ExUnit.CaptureIO.capture_io(fn -> clone_repo({".", fake_repo}) end)
+      assert ExUnit.CaptureIO.capture_io(fn -> clone_repo({".", fake_repo()}) end)
         =~ ~r/.*Cloning.*fake_repo_name.*/
       assert called Git.clone!(["git@bitbucket.org:stelladot/fake_repo_name.git",
                                 "././fake_repo_name"])

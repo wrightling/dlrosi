@@ -16,7 +16,8 @@ Command Flow
 - [x] create CLI interface to handle first-time cloning
 - [x] refactor repos to read from .dlrosirc
 - [x] refactor clone to read from .dlrosirc
-- [ ] refactor Directories.base_dir to read from .dlrosirc
+- [x] refactor Directories.base_dir to read from .dlrosirc
+- [ ] optionally read directory config settings from environment variables
 - [ ] create CLI interface to handle executing commands across all repos (dlrosi exec)
 - [ ] add CLI params for restricting commands to subsets of the repos
 - [x] refactor directory locations to be in config

@@ -2,7 +2,7 @@ defmodule Dlrosi.Repos do
   import Dlrosi.Rosirc, only: [rosirc: 0]
 
   def all do
-    rc = rosirc["apps"]
+    rc = rosirc()["apps"]
     Enum.concat([clients(rc), frontends(rc), services(rc), shared(rc)])
   end
 

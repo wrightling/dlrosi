@@ -16,7 +16,7 @@ defmodule Dlrosi.Clone do
   defp base_dir, do: Dlrosi.Directories.base_dir
   defp seconds_to_ms(s), do: s*1000
 
-  defp path_to(repo), do: "#{base_dir}/#{subdirectory(repo)}"
+  defp path_to(repo), do: "#{base_dir()}/#{subdirectory(repo)}"
 
   defp git_url({_, repo}), do: repo.remote_repo
 

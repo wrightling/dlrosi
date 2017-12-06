@@ -1,8 +1,9 @@
 defmodule Dlrosi.Clone do
   def clone_repos(repos) do
+    # Enum.each(repos, &(clone_repo(&1)))
     repos
     |> Enum.map(&(Task.async(Dlrosi.Clone, :clone_repo, [&1])))
-    |> Enum.map(&(Task.await(&1, seconds_to_ms(60))))
+    |> Enum.map(&(Task.await(&1, seconds_to_ms(120))))
   end
 
   def clone_repo(repo) do

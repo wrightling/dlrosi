@@ -1,5 +1,5 @@
-%{"git_cli": {:hex, :git_cli, "0.2.2", "9294da5a2c5a212e5393df254a42573244ae07927f5796f948fe9b4912c7f785", [:mix], []},
-  "meck": {:hex, :meck, "0.8.4", "59ca1cd971372aa223138efcf9b29475bde299e1953046a0c727184790ab1520", [:make, :rebar], []},
-  "mock": {:hex, :mock, "0.2.0", "5991877be6bb514b647dbd6f4869bc12bd7f2829df16e86c98d6108f966d34d7", [:mix], [{:meck, "~> 0.8.2", [hex: :meck, optional: false]}]},
-  "yamerl": {:hex, :yamerl, "0.3.3", "df48fe3e6aeaca05ec6c4b35418aa7c77258d0d1c32d578a2e12a14751c10d42", [:rebar3], []},
-  "yaml_elixir": {:hex, :yaml_elixir, "1.3.0", "5b945c235f0bc9d49c60927834576952c9e106afbc1dfa76ffcf615d7615e35f", [:mix], [{:yamerl, "~> 0.3.2", [hex: :yamerl, optional: false]}]}}
+%{"git_cli": {:hex, :git_cli, "0.2.4", "43f58045f5d168fa2cff8d2e3822b8c43f294b4b832a419ed8cc01337f1c5b3d", [:mix], []},
+  "meck": {:hex, :meck, "0.8.9", "64c5c0bd8bcca3a180b44196265c8ed7594e16bcc845d0698ec6b4e577f48188", [:rebar3], []},
+  "mock": {:hex, :mock, "0.2.1", "bfdba786903e77f9c18772dee472d020ceb8ef000783e737725a4c8f54ad28ec", [:mix], [{:meck, "~> 0.8.2", [hex: :meck, optional: false]}]},
+  "yamerl": {:hex, :yamerl, "0.6.0", "5cb124a01a66418d7d8f2382948c89b48c1764079798eaeb9b578ddb3c7dc58b", [:rebar3], []},
+  "yaml_elixir": {:hex, :yaml_elixir, "1.3.1", "b84b6333343b0cba176c43c463e622f838825e7476e35334f719b83df4535bff", [:mix], [{:yamerl, "~> 0.5", [hex: :yamerl, optional: false]}]}}
